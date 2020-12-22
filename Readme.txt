@@ -35,21 +35,23 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+**About**
+
 The various projects are an implementation to enable Free@home communication, that uses KNX as transport layer.
 I have reversed the majority of messages, however, the binary representation of the device configuration to channels and properties is not implemented.
 When learning a new device, you have to manualy specify the Actor and Sensor channels in the JSON files.
 
 KNXUartModule			-	Enables communication with the KNX(F@H) bus using a TinySerial 810 from Weinzierl
 KNXBaseTypes			-	KNX layer classes and objects
-FaHPayloadInterpeters	-	Classes to read and create the F@H messages (from the KNX data)
+FaHPayloadInterpeters		-	Classes to read and create the F@H messages (from the KNX data)
 FaHDeviceObject			-	Class representation of a F@H device, used to Learn or Emulate a F@H device
 FreeAtHomeMonitor		-	Class to monitor bus messages and replay bus traffic (used for reverse enginering and testing)
 FaHDeviceLearner		-	Searches for other device (first to respond to discovery) on the bus and retrieves all the properties and fields
 FahDeviceEmulator		-	Emulates a F@H device
-								Use as input previously learned devices.
-								Configuration using F@H SysAp
-						-	FaHGroupMonitor
-								Used to monitor value changes for specific GroupValues, group values to be monitored have to be specified manually.
+						Use as input previously learned devices.
+						Configuration using F@H SysAp
+				-	FaHGroupMonitor
+						Used to monitor value changes for specific GroupValues, group values to be monitored have to be specified manually.
 FaHConnector			-	Test Application to test and interact with the F@H bus.
 
 * The Switch 2_2-v2.1506.json file contains a 2\2 Sensor Actor device that can be used in the emulator.

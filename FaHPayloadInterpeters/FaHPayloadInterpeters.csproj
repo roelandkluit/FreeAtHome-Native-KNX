@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17504416-F04B-49DF-8E9E-ECE5BBA7F3D3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FAHPayloadInterpeters</RootNamespace>
+    <AssemblyName>FAHPayloadInterpeters</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ABBBinaryInputTypeResponse.cs" />
+    <Compile Include="FAHDeviceDescriptorRead.cs" />
+    <Compile Include="FAHFunctionPropertyCommand.cs" />
+    <Compile Include="FAHGroupValueRead.cs" />
+    <Compile Include="FaHGroupValueResponse.cs" />
+    <Compile Include="WriteActions\FPC_WriteRoomInfo.cs" />
+    <Compile Include="WriteActions\FPC_WriteIcon.cs" />
+    <Compile Include="WriteActions\FPC_WriteDescription.cs" />
+    <Compile Include="FAHFunctionPropertyStateResponse.cs" />
+    <Compile Include="WriteActions\FPC_AssignConnection.cs" />
+    <Compile Include="WriteActions\FPC_DeleteConnection.cs" />
+    <Compile Include="ReadActions\FPSR_DeviceChannelInfo.cs" />
+    <Compile Include="ReadActions\FPSR_DeviceOIDData.cs" />
+    <Compile Include="ReadActions\FPSR_DeviceParameterInfo.cs" />
+    <Compile Include="ReadActions\FPSR_ConsistancyTag.cs" />
+    <Compile Include="ReadActions\FPSR_FunctionList.cs" />
+    <Compile Include="ReadActions\FPSR_GroupCommEnableCtl.cs" />
+    <Compile Include="ReadActions\FPSR_LoadStateMachine.cs" />
+    <Compile Include="WriteActions\FPC_PropertyValueWrite.cs" />
+    <Compile Include="ReadActions\FPSR_DescriptorValueRead.cs" />
+    <Compile Include="ReadActions\FPSR_PropertyValueRead.cs" />
+    <Compile Include="ReadActions\FPSR_ReadDeviceHealth.cs" />
+    <Compile Include="ReadActions\FPSR_BasicDeviceInfo.cs" />
+    <Compile Include="ReadActions\FPSR_IconInfo.cs" />
+    <Compile Include="ReadActions\FPSR_ConnectionInfo.cs" />
+    <Compile Include="ReadActions\FPSR_ResultOnly.cs" />
+    <Compile Include="ReadActions\FPSR_ChannelDescription.cs" />
+    <Compile Include="ReadActions\FPSR_RoomInfo.cs" />
+    <Compile Include="FAHGroupValueWrite.cs" />
+    <Compile Include="FAHIndividualAddressSerialNumberWrite.cs" />
+    <Compile Include="ABBSetBinaryInputType.cs" />
+    <Compile Include="FAHReadablePayloadPacketEx.cs" />
+    <Compile Include="FAHRestart.cs" />
+    <Compile Include="FAHDeviceDescriptorResponse.cs" />
+    <Compile Include="FahPayloadInterpeter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FaHDeviceObject\FaHDeviceObject.csproj">
+      <Project>{e44513a1-1e55-41b0-90e4-ae26c75bdb45}</Project>
+      <Name>FaHDeviceObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KNXBaseTypes\KNXBaseTypes.csproj">
+      <Project>{7187f068-d7dd-4116-9c45-20a915b762a2}</Project>
+      <Name>KNXBaseTypes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

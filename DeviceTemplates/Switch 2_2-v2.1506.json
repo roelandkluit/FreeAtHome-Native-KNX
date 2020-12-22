@@ -1,0 +1,2526 @@
+{
+  "FaHAddress": {
+    "byteValue": "ABB700C00001"
+  },
+  "DeviceType": 4112,
+  "ConsistancyValue": {
+    "u16value": 41543
+  },
+  "BasicDeviceInformation": "FFE7FEFF15E237007A3CF9000005E202000100",
+  "DeviceParameterInfo": "01003BFFFFFFFF0714C8000C01004900000005004A00000009004B00000006004C0000000A",
+  "DeviceHealthStatus": {
+    "ByteData": "0774000000000000000000BF00000000000000000001000100000000"
+  },
+  "Channels": [
+    {
+      "ChannelIndex": 0,
+      "Properties": [
+        {
+          "PropertyIndex": 0,
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 1,
+          "channelType": 0,
+          "ActorSensorIndex": 0,
+          "RoomID": 65535,
+          "X": 65535,
+          "Y": 65535
+        },
+        null,
+        null,
+        {
+          "PropertyIndex": 4,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0101"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        }
+      ],
+      "Description": ""
+    },
+    {
+      "ChannelIndex": 1,
+      "ChannelIdentifier": {
+        "u16value": 5602
+      },
+      "Properties": [
+        {
+          "PropertyIndex": 0,
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 1,
+          "FunctionList": [
+            null,
+            {
+              "index": 1,
+              "data": "010000002F000000010000000000000001"
+            },
+            {
+              "index": 2,
+              "data": "0200010030000000020000000000000000"
+            },
+            {
+              "index": 3,
+              "data": "0300030032000000040000000000000000"
+            },
+            {
+              "index": 4,
+              "data": "0400040033000000080000000000000000"
+            },
+            {
+              "index": 5,
+              "data": "0500050034000000100000000000000000"
+            },
+            {
+              "index": 6,
+              "data": "0600060035000000200000000000000000"
+            },
+            {
+              "index": 7,
+              "data": "07002801C6000000400000000000000000"
+            },
+            {
+              "index": 8,
+              "data": "0800710323000002000000000000000000"
+            },
+            {
+              "index": 9,
+              "data": "09006603EA000000800000000000000000"
+            }
+          ],
+          "ChannelAdresses": [
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 0
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0,
+          "RoomID": 65535,
+          "X": 65535,
+          "Y": 65535,
+          "IconId": 65535
+        },
+        {
+          "PropertyIndex": 2,
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [
+                {
+                  "u16value": 65533
+                }
+              ],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 3,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0100"
+            },
+            {
+              "index": 2
+            }
+          ],
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [
+                {
+                  "u16value": 65535
+                }
+              ],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [
+                {
+                  "u16value": 65534
+                }
+              ],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            }
+          ],
+          "channelType": 1,
+          "ActorSensorIndex": 1
+        },
+        {
+          "PropertyIndex": 4,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0101"
+            },
+            {
+              "index": 2,
+              "data": "0201"
+            },
+            {
+              "index": 3,
+              "data": "037F"
+            },
+            {
+              "index": 4,
+              "data": "047F"
+            },
+            {
+              "index": 5,
+              "data": "0501"
+            },
+            {
+              "index": 6,
+              "data": "0602"
+            },
+            {
+              "index": 7,
+              "data": "0701"
+            },
+            {
+              "index": 8,
+              "data": "0802"
+            },
+            {
+              "index": 9,
+              "data": "0901"
+            },
+            {
+              "index": 10,
+              "data": "0A01"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 5,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0140"
+            },
+            {
+              "index": 2,
+              "data": "0240"
+            }
+          ],
+          "DescriptorInfo": "02",
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        }
+      ],
+      "DeviceChannelInfo": "05EC0043000000010000000178",
+      "Description": ""
+    },
+    {
+      "ChannelIndex": 2,
+      "ChannelIdentifier": {
+        "u16value": 1516
+      },
+      "Properties": [
+        {
+          "PropertyIndex": 0,
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 1,
+          "FunctionList": [
+            null,
+            {
+              "index": 1,
+              "data": "010000002F000000010000000000000001"
+            },
+            {
+              "index": 2,
+              "data": "0200010030000000020000000000000000"
+            },
+            {
+              "index": 3,
+              "data": "03007404A1000000800000000000000000"
+            },
+            {
+              "index": 4,
+              "data": "0400030032000000040000000000000000"
+            },
+            {
+              "index": 5,
+              "data": "0500040033000000080000000000000000"
+            },
+            {
+              "index": 6,
+              "data": "0600050034000000100000000000000000"
+            },
+            {
+              "index": 7,
+              "data": "0700060035000000200000000000000000"
+            },
+            {
+              "index": 8,
+              "data": "08002801C6000000400000000000000000"
+            },
+            {
+              "index": 9,
+              "data": "0900710323000002000000000000000000"
+            },
+            {
+              "index": 10,
+              "data": "0A008F0508000001000000000000000000"
+            },
+            {
+              "index": 11,
+              "data": "0B00900509000004000000000000000000"
+            },
+            {
+              "index": 12,
+              "data": "0C0091050A000010000000000000000000"
+            },
+            {
+              "index": 13,
+              "data": "0D0092050B000020000000000000000000"
+            },
+            {
+              "index": 14,
+              "data": "0E0093050C000040000000000000000000"
+            },
+            {
+              "index": 15,
+              "data": "0F0094050D000080000000000000000000"
+            }
+          ],
+          "ChannelAdresses": [
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 0
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0,
+          "RoomID": 65535,
+          "X": 65535,
+          "Y": 65535,
+          "IconId": 65535
+        },
+        {
+          "PropertyIndex": 2,
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 3,
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 4,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0101"
+            },
+            {
+              "index": 2,
+              "data": "0201"
+            },
+            {
+              "index": 3,
+              "data": "037F"
+            },
+            {
+              "index": 4,
+              "data": "047F"
+            },
+            {
+              "index": 5,
+              "data": "0501"
+            },
+            {
+              "index": 6,
+              "data": "0602"
+            },
+            {
+              "index": 7,
+              "data": "0701"
+            },
+            {
+              "index": 8,
+              "data": "0802"
+            },
+            {
+              "index": 9,
+              "data": "0901"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 5,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0140"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        }
+      ],
+      "DeviceChannelInfo": "004C0045000000020000000189",
+      "Description": ""
+    },
+    {
+      "ChannelIndex": 3,
+      "ChannelIdentifier": {
+        "u16value": 4172
+      },
+      "Properties": [
+        {
+          "PropertyIndex": 0,
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 1,
+          "FunctionList": [
+            null,
+            {
+              "index": 1,
+              "data": "010000002F000000010000000000000001"
+            },
+            {
+              "index": 2,
+              "data": "0200010030000000020000000000000000"
+            },
+            {
+              "index": 3,
+              "data": "03007404A1000000800000000000000000"
+            },
+            {
+              "index": 4,
+              "data": "0400030032000000040000000000000000"
+            },
+            {
+              "index": 5,
+              "data": "0500040033000000080000000000000000"
+            },
+            {
+              "index": 6,
+              "data": "0600050034000000100000000000000000"
+            },
+            {
+              "index": 7,
+              "data": "0700060035000000200000000000000000"
+            },
+            {
+              "index": 8,
+              "data": "08002801C6000000400000000000000000"
+            },
+            {
+              "index": 9,
+              "data": "0900710323000002000000000000000000"
+            },
+            {
+              "index": 10,
+              "data": "0A008F0508000001000000000000000000"
+            },
+            {
+              "index": 11,
+              "data": "0B00900509000004000000000000000000"
+            },
+            {
+              "index": 12,
+              "data": "0C0091050A000010000000000000000000"
+            },
+            {
+              "index": 13,
+              "data": "0D0092050B000020000000000000000000"
+            },
+            {
+              "index": 14,
+              "data": "0E0093050C000040000000000000000000"
+            },
+            {
+              "index": 15,
+              "data": "0F0094050D000080000000000000000000"
+            }
+          ],
+          "ChannelAdresses": [
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 0
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0,
+          "RoomID": 65535,
+          "X": 65535,
+          "Y": 65535,
+          "IconId": 65535
+        },
+        {
+          "PropertyIndex": 2,
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 3,
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 4,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0101"
+            },
+            {
+              "index": 2,
+              "data": "0201"
+            },
+            {
+              "index": 3,
+              "data": "0302"
+            },
+            {
+              "index": 4,
+              "data": "0401"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 5,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0140"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        }
+      ],
+      "DeviceChannelInfo": "0068004600000002000000015C",
+      "Description": ""
+    },
+    {
+      "ChannelIndex": 4,
+      "ChannelIdentifier": {
+        "u16value": 4200
+      },
+      "Properties": [
+        {
+          "PropertyIndex": 0,
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 1,
+          "FunctionList": [
+            null,
+            {
+              "index": 1,
+              "data": "010000002F000000010000000000000001"
+            },
+            {
+              "index": 2,
+              "data": "0200010030000000020000000000000000"
+            },
+            {
+              "index": 3,
+              "data": "0300030032000000040000000000000000"
+            },
+            {
+              "index": 4,
+              "data": "0400040033000000080000000000000000"
+            },
+            {
+              "index": 5,
+              "data": "0500050034000000100000000000000000"
+            },
+            {
+              "index": 6,
+              "data": "0600060035000000200000000000000000"
+            },
+            {
+              "index": 7,
+              "data": "07002801C6000000400000000000000000"
+            },
+            {
+              "index": 8,
+              "data": "0800710323000002000000000000000000"
+            },
+            {
+              "index": 9,
+              "data": "09006703EB000001000000000000000000"
+            }
+          ],
+          "ChannelAdresses": [
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 0
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0,
+          "RoomID": 65535,
+          "X": 65535,
+          "Y": 65535,
+          "IconId": 65535
+        },
+        {
+          "PropertyIndex": 2,
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [
+                {
+                  "u16value": 65530
+                }
+              ],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 3,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0100"
+            },
+            {
+              "index": 2
+            }
+          ],
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [
+                {
+                  "u16value": 65532
+                }
+              ],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [
+                {
+                  "u16value": 65531
+                }
+              ],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            }
+          ],
+          "channelType": 1,
+          "ActorSensorIndex": 2
+        },
+        {
+          "PropertyIndex": 4,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0101"
+            },
+            {
+              "index": 2,
+              "data": "0201"
+            },
+            {
+              "index": 3,
+              "data": "037F"
+            },
+            {
+              "index": 4,
+              "data": "047F"
+            },
+            {
+              "index": 5,
+              "data": "0501"
+            },
+            {
+              "index": 6,
+              "data": "0602"
+            },
+            {
+              "index": 7,
+              "data": "0701"
+            },
+            {
+              "index": 8,
+              "data": "0802"
+            },
+            {
+              "index": 9,
+              "data": "0901"
+            },
+            {
+              "index": 10,
+              "data": "0A01"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 5,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0140"
+            },
+            {
+              "index": 2,
+              "data": "0240"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        }
+      ],
+      "DeviceChannelInfo": "060C0044000000040000000178",
+      "Description": ""
+    },
+    {
+      "ChannelIndex": 5,
+      "ChannelIdentifier": {
+        "u16value": 1548
+      },
+      "Properties": [
+        {
+          "PropertyIndex": 0,
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 1,
+          "FunctionList": [
+            null,
+            {
+              "index": 1,
+              "data": "010000002F000000010000000000000001"
+            },
+            {
+              "index": 2,
+              "data": "0200010030000000020000000000000000"
+            },
+            {
+              "index": 3,
+              "data": "03007404A1000000800000000000000000"
+            },
+            {
+              "index": 4,
+              "data": "0400030032000000040000000000000000"
+            },
+            {
+              "index": 5,
+              "data": "0500040033000000080000000000000000"
+            },
+            {
+              "index": 6,
+              "data": "0600050034000000100000000000000000"
+            },
+            {
+              "index": 7,
+              "data": "0700060035000000200000000000000000"
+            },
+            {
+              "index": 8,
+              "data": "08002801C6000000400000000000000000"
+            },
+            {
+              "index": 9,
+              "data": "0900710323000002000000000000000000"
+            },
+            {
+              "index": 10,
+              "data": "0A008F0508000001000000000000000000"
+            },
+            {
+              "index": 11,
+              "data": "0B00900509000004000000000000000000"
+            },
+            {
+              "index": 12,
+              "data": "0C0091050A000010000000000000000000"
+            },
+            {
+              "index": 13,
+              "data": "0D0092050B000020000000000000000000"
+            },
+            {
+              "index": 14,
+              "data": "0E0093050C000040000000000000000000"
+            },
+            {
+              "index": 15,
+              "data": "0F0094050D000080000000000000000000"
+            }
+          ],
+          "ChannelAdresses": [
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 0
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0,
+          "RoomID": 65535,
+          "X": 65535,
+          "Y": 65535,
+          "IconId": 65535
+        },
+        {
+          "PropertyIndex": 2,
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 3,
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 4,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0101"
+            },
+            {
+              "index": 2,
+              "data": "0201"
+            },
+            {
+              "index": 3,
+              "data": "037F"
+            },
+            {
+              "index": 4,
+              "data": "047F"
+            },
+            {
+              "index": 5,
+              "data": "0501"
+            },
+            {
+              "index": 6,
+              "data": "0602"
+            },
+            {
+              "index": 7,
+              "data": "0701"
+            },
+            {
+              "index": 8,
+              "data": "0802"
+            },
+            {
+              "index": 9,
+              "data": "0901"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 5,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0140"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        }
+      ],
+      "DeviceChannelInfo": "004C0047000000080000000189",
+      "Description": ""
+    },
+    {
+      "ChannelIndex": 6,
+      "ChannelIdentifier": {
+        "u16value": 4431
+      },
+      "Properties": [
+        {
+          "PropertyIndex": 0,
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 1,
+          "FunctionList": [
+            null,
+            {
+              "index": 1,
+              "data": "010000002F000000010000000000000001"
+            },
+            {
+              "index": 2,
+              "data": "0200010030000000020000000000000000"
+            },
+            {
+              "index": 3,
+              "data": "03007404A1000000800000000000000000"
+            },
+            {
+              "index": 4,
+              "data": "0400030032000000040000000000000000"
+            },
+            {
+              "index": 5,
+              "data": "0500040033000000080000000000000000"
+            },
+            {
+              "index": 6,
+              "data": "0600050034000000100000000000000000"
+            },
+            {
+              "index": 7,
+              "data": "0700060035000000200000000000000000"
+            },
+            {
+              "index": 8,
+              "data": "08002801C6000000400000000000000000"
+            },
+            {
+              "index": 9,
+              "data": "0900710323000002000000000000000000"
+            },
+            {
+              "index": 10,
+              "data": "0A008F0508000001000000000000000000"
+            },
+            {
+              "index": 11,
+              "data": "0B00900509000004000000000000000000"
+            },
+            {
+              "index": 12,
+              "data": "0C0091050A000010000000000000000000"
+            },
+            {
+              "index": 13,
+              "data": "0D0092050B000020000000000000000000"
+            },
+            {
+              "index": 14,
+              "data": "0E0093050C000040000000000000000000"
+            },
+            {
+              "index": 15,
+              "data": "0F0094050D000080000000000000000000"
+            }
+          ],
+          "ChannelAdresses": [
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 0
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0,
+          "RoomID": 65535,
+          "X": 65535,
+          "Y": 65535,
+          "IconId": 65535
+        },
+        {
+          "PropertyIndex": 2,
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 3,
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 4,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0101"
+            },
+            {
+              "index": 2,
+              "data": "0201"
+            },
+            {
+              "index": 3,
+              "data": "0302"
+            },
+            {
+              "index": 4,
+              "data": "0401"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 5,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0140"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        }
+      ],
+      "DeviceChannelInfo": "0068004800000008000000015C",
+      "Description": ""
+    },
+    {
+      "ChannelIndex": 7,
+      "Properties": [
+        {
+          "PropertyIndex": 0,
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 1,
+          "FunctionList": [
+            null,
+            {
+              "index": 1,
+              "data": "0100070001000000000000000100000001"
+            },
+            {
+              "index": 2,
+              "data": "02002701C800000000000000020000001A"
+            },
+            {
+              "index": 3,
+              "data": "03002401C900000000000000400000001A"
+            },
+            {
+              "index": 4,
+              "data": "04003D025F00000000000000040000001A"
+            },
+            {
+              "index": 5,
+              "data": "05008704CF00000000000000800000001A"
+            },
+            {
+              "index": 6,
+              "data": "060045026300000000000000080000001A"
+            },
+            {
+              "index": 7,
+              "data": "070056038400000000000000100000001A"
+            },
+            {
+              "index": 8,
+              "data": "080057038500000000000000200000001A"
+            },
+            {
+              "index": 9,
+              "data": "09008804D700000000000001000000001A"
+            },
+            {
+              "index": 10,
+              "data": "0A008904D800000000000002000000001A"
+            },
+            {
+              "index": 11,
+              "data": "0B002901CA00000000000004000000001A"
+            },
+            {
+              "index": 12,
+              "data": "0C00A405C600000000000008000000001A"
+            }
+          ],
+          "ChannelAdresses": [
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 7
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0,
+          "RoomID": 65535,
+          "X": 65535,
+          "Y": 65535,
+          "IconId": 65535
+        },
+        {
+          "PropertyIndex": 2,
+          "IndicedOIDData": [
+            null,
+            {
+              "Index": 1,
+              "Data": "010001000B000000010101200000"
+            },
+            {
+              "Index": 2,
+              "Data": "020002000C00000009010A200000"
+            },
+            {
+              "Index": 3,
+              "Data": "030003000D000000010201200000"
+            },
+            {
+              "Index": 4,
+              "Data": "040004000E000000091201200000"
+            },
+            {
+              "Index": 5,
+              "Data": "05000602BD00000001010A200000"
+            },
+            {
+              "Index": 6,
+              "Data": "060030011B00000D020501010001"
+            },
+            {
+              "Index": 7,
+              "Data": "070032002100000E400501010001"
+            },
+            {
+              "Index": 8,
+              "Data": "080143025D000000040101010001"
+            },
+            {
+              "Index": 9,
+              "Data": "090144025E000000800101010001"
+            },
+            {
+              "Index": 10,
+              "Data": "0A014D039B000000100501200000"
+            },
+            {
+              "Index": 11,
+              "Data": "0B014E039C000000200501200000"
+            },
+            {
+              "Index": 12,
+              "Data": "0C0135002300000C000101010004"
+            }
+          ],
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [
+                {
+                  "u16value": 65535
+                }
+              ],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [
+                {
+                  "u16value": 65534
+                }
+              ],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            }
+          ],
+          "channelType": 2,
+          "ActorSensorIndex": 5
+        },
+        {
+          "PropertyIndex": 3,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0100"
+            },
+            {
+              "index": 2,
+              "data": "0200"
+            },
+            {
+              "index": 3
+            }
+          ],
+          "IndicedOIDData": [
+            null,
+            {
+              "Index": 1,
+              "Data": "010100000F000000010101010008"
+            },
+            {
+              "Index": 2,
+              "Data": "0201010204000000011464010008"
+            },
+            {
+              "Index": 3,
+              "Data": "030111001400000FF61503010008"
+            },
+            {
+              "Index": 4,
+              "Data": "040131017D00000D020501010001"
+            },
+            {
+              "Index": 5,
+              "Data": "05013201C700000E400501010001"
+            },
+            {
+              "Index": 6,
+              "Data": "0601410261000000040101010001"
+            },
+            {
+              "Index": 7,
+              "Data": "070142025C000000800101010001"
+            },
+            {
+              "Index": 8,
+              "Data": "08014F039E000000100501010000"
+            },
+            {
+              "Index": 9,
+              "Data": "090150039F000000200501010000"
+            }
+          ],
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [
+                {
+                  "u16value": 65533
+                }
+              ],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            }
+          ],
+          "channelType": 3,
+          "ActorSensorIndex": 5
+        },
+        {
+          "PropertyIndex": 4,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "010168"
+            },
+            {
+              "index": 2,
+              "data": "0201"
+            },
+            {
+              "index": 3,
+              "data": "0301"
+            },
+            {
+              "index": 4,
+              "data": "044C"
+            },
+            {
+              "index": 5,
+              "data": "050384"
+            },
+            {
+              "index": 6,
+              "data": "06000A"
+            },
+            {
+              "index": 7,
+              "data": "070168"
+            },
+            {
+              "index": 8,
+              "data": "0802"
+            },
+            {
+              "index": 9,
+              "data": "0902"
+            }
+          ],
+          "IndicedOIDData": [
+            null,
+            {
+              "Index": 1,
+              "Data": "01016D0000000103070500150000003C0000001E000007080000000A3F800000"
+            },
+            {
+              "Index": 2,
+              "Data": "0201050000000102146400140100CD00CE00CF"
+            },
+            {
+              "Index": 3,
+              "Data": "03013000000372031464002F0101B601B5"
+            },
+            {
+              "Index": 4,
+              "Data": "04010500000F4203050100300000001E00000000000000640000000540233333"
+            },
+            {
+              "Index": 5,
+              "Data": "0502620000000201070500310000038400000078000007080000000A3F800000"
+            },
+            {
+              "Index": 6,
+              "Data": "0602640000000801070400320000000A0000000100000032000000013F800000"
+            },
+            {
+              "Index": 7,
+              "Data": "07000400000030030706009A0000000600000006000005A00000000142700000"
+            },
+            {
+              "Index": 8,
+              "Data": "08039D0000003003050100560000000100000000000000640000000140233333"
+            },
+            {
+              "Index": 9,
+              "Data": "09024500000B00031464009B0204D304D404D504D6"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 5,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "014000"
+            },
+            {
+              "index": 2,
+              "data": "024000"
+            },
+            {
+              "index": 3,
+              "data": "034000"
+            },
+            {
+              "index": 4,
+              "data": "044000"
+            },
+            {
+              "index": 5,
+              "data": "054000"
+            },
+            {
+              "index": 6,
+              "data": "064000"
+            },
+            {
+              "index": 7,
+              "data": "074000"
+            },
+            {
+              "index": 8,
+              "data": "084000"
+            },
+            {
+              "index": 9,
+              "data": "094000"
+            },
+            {
+              "index": 10,
+              "data": "0A4000"
+            },
+            {
+              "index": 11,
+              "data": "0B4000"
+            },
+            {
+              "index": 12,
+              "data": "0C4000"
+            },
+            {
+              "index": 13,
+              "data": "0D4000"
+            },
+            {
+              "index": 14,
+              "data": "0E4000"
+            },
+            {
+              "index": 15,
+              "data": "0F4000"
+            },
+            {
+              "index": 16,
+              "data": "104000"
+            }
+          ],
+          "IndicedOIDData": [
+            {
+              "Index": 0,
+              "Data": "100100"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        }
+      ],
+      "Description": ""
+    },
+    {
+      "ChannelIndex": 8,
+      "Properties": [
+        {
+          "PropertyIndex": 0,
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 1,
+          "FunctionList": [
+            null,
+            {
+              "index": 1,
+              "data": "0100070001000000000000000100000001"
+            },
+            {
+              "index": 2,
+              "data": "02002701C800000000000000020000001A"
+            },
+            {
+              "index": 3,
+              "data": "03002401C900000000000000400000001A"
+            },
+            {
+              "index": 4,
+              "data": "04003D025F00000000000000040000001A"
+            },
+            {
+              "index": 5,
+              "data": "05008704CF00000000000000800000001A"
+            },
+            {
+              "index": 6,
+              "data": "060045026300000000000000080000001A"
+            },
+            {
+              "index": 7,
+              "data": "070056038400000000000000100000001A"
+            },
+            {
+              "index": 8,
+              "data": "080057038500000000000000200000001A"
+            },
+            {
+              "index": 9,
+              "data": "09008804D700000000000001000000001A"
+            },
+            {
+              "index": 10,
+              "data": "0A008904D800000000000002000000001A"
+            },
+            {
+              "index": 11,
+              "data": "0B002901CA00000000000004000000001A"
+            },
+            {
+              "index": 12,
+              "data": "0C00A405C600000000000008000000001A"
+            }
+          ],
+          "ChannelAdresses": [
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 7
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0,
+          "RoomID": 65535,
+          "X": 65535,
+          "Y": 65535,
+          "IconId": 65535
+        },
+        {
+          "PropertyIndex": 2,
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [
+                {
+                  "u16value": 65532
+                }
+              ],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [
+                {
+                  "u16value": 65531
+                }
+              ],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "ChannelParameter": 0
+            }
+          ],
+          "channelType": 2,
+          "ActorSensorIndex": 6
+        },
+        {
+          "PropertyIndex": 3,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "0100"
+            },
+            {
+              "index": 2,
+              "data": "0200"
+            },
+            {
+              "index": 3
+            }
+          ],
+          "ChannelAdresses": [
+            null,
+            {
+              "GroupValueAddress": [
+                {
+                  "u16value": 65530
+                }
+              ],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            },
+            {
+              "GroupValueAddress": [],
+              "ChannelParameter": 1
+            }
+          ],
+          "channelType": 3,
+          "ActorSensorIndex": 6
+        },
+        {
+          "PropertyIndex": 4,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "010168"
+            },
+            {
+              "index": 2,
+              "data": "0201"
+            },
+            {
+              "index": 3,
+              "data": "0301"
+            },
+            {
+              "index": 4,
+              "data": "044C"
+            },
+            {
+              "index": 5,
+              "data": "050384"
+            },
+            {
+              "index": 6,
+              "data": "06000A"
+            },
+            {
+              "index": 7,
+              "data": "070168"
+            },
+            {
+              "index": 8,
+              "data": "0802"
+            },
+            {
+              "index": 9,
+              "data": "0902"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        },
+        {
+          "PropertyIndex": 5,
+          "PropertyData": [
+            null,
+            {
+              "index": 1,
+              "data": "014000"
+            },
+            {
+              "index": 2,
+              "data": "024000"
+            },
+            {
+              "index": 3,
+              "data": "034000"
+            },
+            {
+              "index": 4,
+              "data": "044000"
+            },
+            {
+              "index": 5,
+              "data": "054000"
+            },
+            {
+              "index": 6,
+              "data": "064000"
+            },
+            {
+              "index": 7,
+              "data": "074000"
+            },
+            {
+              "index": 8,
+              "data": "084000"
+            },
+            {
+              "index": 9,
+              "data": "094000"
+            },
+            {
+              "index": 10,
+              "data": "0A4000"
+            },
+            {
+              "index": 11,
+              "data": "0B4000"
+            },
+            {
+              "index": 12,
+              "data": "0C4000"
+            },
+            {
+              "index": 13,
+              "data": "0D4000"
+            },
+            {
+              "index": 14,
+              "data": "0E4000"
+            },
+            {
+              "index": 15,
+              "data": "0F4000"
+            },
+            {
+              "index": 16,
+              "data": "104000"
+            }
+          ],
+          "channelType": 0,
+          "ActorSensorIndex": 0
+        }
+      ],
+      "Description": ""
+    }
+  ],
+  "AutosaveFilename": "",
+  "KnxAddress": {
+    "u16value": 65535
+  },
+  "SystemID": {
+    "SystemID": 65535
+  },
+  "LastWriteTime": "2020-12-05T20:15:29.1756118Z",
+  "FahClassVersion": 2.0,
+  "ChannelCount": 6
+}

@@ -1,0 +1,110 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeAtHomeMonitor", "FreeAtHomeMonitor\FreeAtHomeMonitor.csproj", "{DEBD7371-A0CB-471A-8541-0A6047C3E8BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KNXUartModule", "KNXUartModule\KNXUartModule.csproj", "{77E38B60-3F37-4B21-9034-AD1E331D4AE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KNXBaseTypes", "KNXBaseTypes\KNXBaseTypes.csproj", "{7187F068-D7DD-4116-9C45-20A915B762A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaHPayloadInterpeters", "FAHPayloadInterpeters\FaHPayloadInterpeters.csproj", "{17504416-F04B-49DF-8E9E-ECE5BBA7F3D3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7187F068-D7DD-4116-9C45-20A915B762A2} = {7187F068-D7DD-4116-9C45-20A915B762A2}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaHDeviceObject", "FaHDeviceObject\FaHDeviceObject.csproj", "{E44513A1-1E55-41B0-90E4-AE26C75BDB45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaHDeviceLearner", "FaHDeviceLearner\FaHDeviceLearner.csproj", "{FAED0DE1-833B-4C8B-932F-0B6A1A7945A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaHDeviceEmulator", "FaHDeviceEmulator\FaHDeviceEmulator.csproj", "{338E44E6-8B35-489B-ACF5-0DB6062A4E8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{31107ACA-E9DC-4F23-8A51-A3B35A646B3F}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.txt = Readme.txt
+		Sample1.png = Sample1.png
+		Sample2.png = Sample2.png
+		Sample3.png = Sample3.png
+		DeviceTemplates\Switch 2_2-v2.1366.json = DeviceTemplates\Switch 2_2-v2.1366.json
+		DeviceTemplates\Switch 2_2-v2.1506.json = DeviceTemplates\Switch 2_2-v2.1506.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaHConnector", "FaHConnector\FaHConnector.csproj", "{FCA399C3-7984-463D-A3F6-82D5CA952924}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEBD7371-A0CB-471A-8541-0A6047C3E8BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEBD7371-A0CB-471A-8541-0A6047C3E8BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEBD7371-A0CB-471A-8541-0A6047C3E8BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEBD7371-A0CB-471A-8541-0A6047C3E8BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E38B60-3F37-4B21-9034-AD1E331D4AE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E38B60-3F37-4B21-9034-AD1E331D4AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E38B60-3F37-4B21-9034-AD1E331D4AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E38B60-3F37-4B21-9034-AD1E331D4AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7187F068-D7DD-4116-9C45-20A915B762A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7187F068-D7DD-4116-9C45-20A915B762A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7187F068-D7DD-4116-9C45-20A915B762A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7187F068-D7DD-4116-9C45-20A915B762A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17504416-F04B-49DF-8E9E-ECE5BBA7F3D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17504416-F04B-49DF-8E9E-ECE5BBA7F3D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17504416-F04B-49DF-8E9E-ECE5BBA7F3D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17504416-F04B-49DF-8E9E-ECE5BBA7F3D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E44513A1-1E55-41B0-90E4-AE26C75BDB45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E44513A1-1E55-41B0-90E4-AE26C75BDB45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E44513A1-1E55-41B0-90E4-AE26C75BDB45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E44513A1-1E55-41B0-90E4-AE26C75BDB45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAED0DE1-833B-4C8B-932F-0B6A1A7945A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAED0DE1-833B-4C8B-932F-0B6A1A7945A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAED0DE1-833B-4C8B-932F-0B6A1A7945A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAED0DE1-833B-4C8B-932F-0B6A1A7945A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{338E44E6-8B35-489B-ACF5-0DB6062A4E8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{338E44E6-8B35-489B-ACF5-0DB6062A4E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{338E44E6-8B35-489B-ACF5-0DB6062A4E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{338E44E6-8B35-489B-ACF5-0DB6062A4E8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCA399C3-7984-463D-A3F6-82D5CA952924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCA399C3-7984-463D-A3F6-82D5CA952924}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCA399C3-7984-463D-A3F6-82D5CA952924}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCA399C3-7984-463D-A3F6-82D5CA952924}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D39B1252-5A0F-4B11-8268-85EAC1B872F3}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://dummy:8080/tfs/dummy
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = FreeAtHomeMonitor\\FreeAtHomeMonitor.csproj
+		SccProjectName1 = FreeAtHomeMonitor
+		SccLocalPath1 = FreeAtHomeMonitor
+		SccProjectUniqueName2 = KNXUartModule\\KNXUartModule.csproj
+		SccProjectName2 = KNXUartModule
+		SccLocalPath2 = KNXUartModule
+		SccProjectUniqueName3 = KNXBaseTypes\\KNXBaseTypes.csproj
+		SccProjectName3 = KNXBaseTypes
+		SccLocalPath3 = KNXBaseTypes
+		SccProjectUniqueName4 = FAHPayloadInterpeters\\FaHPayloadInterpeters.csproj
+		SccProjectName4 = FAHPayloadInterpeters
+		SccLocalPath4 = FAHPayloadInterpeters
+		SccProjectUniqueName5 = FaHDeviceObject\\FaHDeviceObject.csproj
+		SccProjectName5 = FaHDeviceObject
+		SccLocalPath5 = FaHDeviceObject
+		SccProjectUniqueName6 = FaHDeviceLearner\\FaHDeviceLearner.csproj
+		SccProjectName6 = FaHDeviceLearner
+		SccLocalPath6 = FaHDeviceLearner
+		SccProjectUniqueName7 = FaHDeviceEmulator\\FaHDeviceEmulator.csproj
+		SccProjectName7 = FaHDeviceEmulator
+		SccLocalPath7 = FaHDeviceEmulator
+		SccProjectUniqueName8 = FaHConnector\\FaHConnector.csproj
+		SccProjectName8 = FaHConnector
+		SccLocalPath8 = FaHConnector
+	EndGlobalSection
+EndGlobal

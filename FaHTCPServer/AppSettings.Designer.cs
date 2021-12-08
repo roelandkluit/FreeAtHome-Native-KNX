@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FaHConnector {
+namespace FaHTCPServer {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -25,7 +25,7 @@ namespace FaHConnector {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Com4")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Com3")]
         public string ComPort {
             get {
                 return ((string)(this["ComPort"]));

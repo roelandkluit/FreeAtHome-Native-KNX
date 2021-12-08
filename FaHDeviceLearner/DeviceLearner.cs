@@ -51,6 +51,7 @@ using FAHPayloadInterpeters.FAHFunctionPropertyStateResponses;
 using FreeAtHomeDeviceLearner.Properties;
 using FreeAtHomeDevices;
 using KNXBaseTypes;
+using KNXNetworkLayer;
 using KNXUartModule;
 using System;
 using System.Collections.Generic;
@@ -95,7 +96,7 @@ namespace FreeAtHomeDeviceLearner
             
             kNXUart.OnKNXMessage += KNXUart_OnKNXMessage;
             kNXUart.ResetAndInit();
-            kNXUart.kNXAddressesToAck.Add(new KNXAddress(0x00, 0x02));
+            kNXUart.AddKNXAddressToAck(new KNXAddress(0x00, 0x02));
 
             SysApEmulator = new FreeAtHomeDevices.FaHDevice
             {
@@ -169,7 +170,7 @@ namespace FreeAtHomeDeviceLearner
         static void LearnDevice(ref KNXUartConnection kNXUart)
         {
             byte counter = 0;
-            bool moreIndices;
+            bool moreIndices;            
 
             for (byte i = 1; i <= 10; i++)
             {
@@ -324,7 +325,7 @@ namespace FreeAtHomeDeviceLearner
                     ConsoleWriteLine("Invalid data");
             }
 
-            for (byte i = 0; i <= deviceToLearn.ChannelCount; i++)
+            for (byte i = 0; i <= deviceToLearn.ChannelCount + 5; i++)
             {
                 //*----------------------------------------------------------------------------
                 ConsoleWriteHeader("ReadBasicInfo Chn: " + i);
@@ -723,7 +724,6 @@ namespace FreeAtHomeDeviceLearner
                 deviceToLearn.WriteChannelPropertyType(1, 3, FaHDeviceProperties.ChannelType.chanOutputOnClickChannelType, FaHDeviceProperties.SensorActorInterfaceType.ButtonLeft);
                 deviceToLearn.WriteChannelPropertyType(4, 3, FaHDeviceProperties.ChannelType.chanOutputOnClickChannelType, FaHDeviceProperties.SensorActorInterfaceType.ButtonRight);
 
-
                 //Deze moeten we monitoren
                 deviceToLearn.WriteChannelPropertyType(7, 2, FaHDeviceProperties.ChannelType.chanInputActorGroupMessage, FaHDeviceProperties.SensorActorInterfaceType.Actor1);
                 deviceToLearn.WriteChannelPropertyType(8, 2, FaHDeviceProperties.ChannelType.chanInputActorGroupMessage, FaHDeviceProperties.SensorActorInterfaceType.Actor2);
@@ -836,7 +836,7 @@ namespace FreeAtHomeDeviceLearner
 
         }
 
-        private static void KNXUart_OnKNXMessage(KNXUartConnection caller, KNXBaseTypes.KNXmessage Message, KNXUartConnection.UartEvents uartEvent)
+        private static void KNXUart_OnKNXMessage(KNXNetworkLayerTemplate caller, KNXBaseTypes.KNXmessage Message, KNXNetworkLayerTemplate.KnxPacketEvents uartEvent)
         {
             if (Message.ControlField.RepeatFrame)
                 //Repeatframe

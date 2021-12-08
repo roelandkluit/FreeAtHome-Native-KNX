@@ -49,8 +49,10 @@ using FAHPayloadInterpeters;
 using FreeAtHomeDevices;
 using FreeAtHomeKNX.Properties;
 using KNXBaseTypes;
+using KNXNetworkLayer;
 using KNXUartModule;
 using static FAHPayloadInterpeters.FAHFunctionPropertyCommand;
+using FaHTCPClient;
 
 namespace FreeAtHomeKNX
 {
@@ -77,14 +79,15 @@ namespace FreeAtHomeKNX
             stdOut = new ReadWriteKNXDataLog("Output_" + DateTime.Now.Ticks + ".txt", true);
             //stdIn = new ReadWriteKNXDataLog(@"replay_log.txt", false);
 
-            KNXUartModule.KNXUartConnection kNXUart = new KNXUartConnection(AppSettings.Default.ComPort)
+            FaHTCPClient.TCPknxClient kNXUart = new FaHTCPClient.TCPknxClient("172.16.16.20", 9998);
+            /*KNXUartModule.KNXUartConnection kNXUart = new KNXUartConnection(AppSettings.Default.ComPort)
             {
                 AllowWrite = AppSettings.Default.KNXWriteEnabled
-            };
+            };*/
 
             kNXUart.OnKNXMessage += KNXUart_OnKNXMessage;
-            kNXUart.OnUartEvent += KNXUart_OnUartEvent;
-            kNXUart.ResetAndInit();
+            kNXUart.OnKNXEvent += KNXUart_OnKNXEvent;
+            //kNXUart.ResetAndInit();
 
             /*
             int i = 0;
@@ -106,17 +109,85 @@ namespace FreeAtHomeKNX
                     Console.WriteLine("Exit Accepted");
                     return;
                 }
+
+                if (ret.ToLower() == "x")
+                {
+                    //[0x00 - 0x01]     [0x14 - 0xC8]      0x00 0x80 0x66
+                    //[0xEB - 0x01]     [0xB5 - 0x50]      0x00[0x80 | 0x09]
+
+                    //[0x00 - 0x01]     [0x14 - 0xC8]      0x00 0x80 0x59
+                    //[0x00 - 0x01]     [0x3D - 0x26]      0x00 0x80 0x45 0x1E 0xD1 0x58
+
+                    FaHDevice nulldev = new FaHDevice();
+                    nulldev.KnxAddress.u16valueHigh = 1;
+                    KNXAddress TargetGroupValue = new KNXAddress(0x14, 0xC8);
+                    byte[] data = new byte[] { 0x66 };
+
+                    KNXmessage GroupWriteMessage = FAHGroupValueWrite.CreateFAHGroupValueWrite(nulldev, TargetGroupValue, data, false);
+                    KNXUart_OnKNXMessage(null, GroupWriteMessage, KNXNetworkLayerTemplate.KnxPacketEvents.GotKNXPacket);
+
+                    kNXUart.SendKNXMessage(GroupWriteMessage);
+
+                    //*************************************************************
+                    KNXAddress TargetGroupValue1 = new KNXAddress(0x3D, 0x26);
+                    byte[] data1 = new byte[] { 0x45, 0x1E, 0xD1, 0x66 };
+
+                    KNXmessage GroupWriteMessage1 = FAHGroupValueWrite.CreateFAHGroupValueWrite(nulldev, TargetGroupValue1, data1, true);
+                    KNXUart_OnKNXMessage(null, GroupWriteMessage1, KNXNetworkLayerTemplate.KnxPacketEvents.GotKNXPacket);
+
+                    kNXUart.SendKNXMessage(GroupWriteMessage1);
+
+                    //**********************************************************************//
+
+
+
+                }
+
+
+                if (ret.ToLower()=="+")
+                {
+                    FaHDevice nulldev = new FaHDevice();
+                    KNXAddress TargetGroupValue = new KNXAddress(0xC6, 0x4D);
+                    byte[] data = new byte[] { 0x01 };
+
+                    KNXmessage GroupWriteMessage = FAHGroupValueWrite.CreateFAHGroupValueWrite(nulldev, TargetGroupValue, data, true);
+                    KNXUart_OnKNXMessage(null, GroupWriteMessage, KNXNetworkLayerTemplate.KnxPacketEvents.GotKNXPacket);
+
+                    kNXUart.SendKNXMessage(GroupWriteMessage);
+
+
+                    //2021 - 10 - 03 11:08:33.826; GroupValueWrite KNX_PRIORITY_HIGH[NoExtdFrame]   [0x00 - 0x01]     [0x3D - 0x26]      0x00 0x80 0x06 0xB0 0xFF 0x57
+                }
+                if (ret.ToLower() == "-")
+                {
+                    FaHDevice nulldev = new FaHDevice();
+                    KNXAddress TargetGroupValue = new KNXAddress(0xC6, 0x4D);
+                    byte[] data = new byte[] { 0x00 };
+
+                    KNXmessage GroupWriteMessage = FAHGroupValueWrite.CreateFAHGroupValueWrite(nulldev, TargetGroupValue, data, true);
+                    KNXUart_OnKNXMessage(null, GroupWriteMessage, KNXNetworkLayerTemplate.KnxPacketEvents.GotKNXPacket);
+
+
+                    //[0xC6 - 0x4D]      0x00[0x80 | 0x01]
+
+                    kNXUart.SendKNXMessage(GroupWriteMessage);
+
+
+                    //2021 - 10 - 03 11:08:33.826; GroupValueWrite KNX_PRIORITY_HIGH[NoExtdFrame]   [0x00 - 0x01]     [0x3D - 0x26]      0x00 0x80 0x06 0xB0 0xFF 0x57
+                }
+
+
                 Console.WriteLine("# " + ret);
                 stdOut.WriteComment(ret);
             }
         }
 
-        private static void KNXUart_OnUartEvent(KNXUartConnection caller, KNXUartConnection.UartEvents uartEvent)
+        private static void KNXUart_OnKNXEvent(KNXNetworkLayerTemplate caller, KNXNetworkLayerTemplate.KnxPacketEvents uartEvent)
         {
             Console.WriteLine("[" + uartEvent + "]");
         }
 
-        private static void KNXUart_OnKNXMessage(KNXUartConnection caller, KNXBaseTypes.KNXmessage Message, KNXUartConnection.UartEvents uartEvent)
+        private static void KNXUart_OnKNXMessage(KNXNetworkLayerTemplate caller, KNXBaseTypes.KNXmessage Message, KNXNetworkLayerTemplate.KnxPacketEvents uartEvent)
         {
             stdOut.WriteOut(Message);
             try

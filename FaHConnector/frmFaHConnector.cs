@@ -5,7 +5,7 @@
     This software is not created, maintained or has any assosiation
     with ABB \ Busch-Jeager.
 
-    Copyright (C) 2020 Roeland Kluit
+    Copyright (C) 2020-2021 Roeland Kluit
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -37,7 +37,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 using FAHPayloadInterpeters;
+using FaHTCPClient;
 using KNXBaseTypes;
+using KNXNetworkLayer;
 using KNXUartModule;
 using System;
 using System.Collections.Generic;
@@ -54,7 +56,7 @@ namespace FaHConnector
 {
     public partial class frmFaHConnector : Form
     {
-        KNXUartModule.KNXUartConnection kNXUart;
+        KNXNetworkLayerTemplate kNXUart;
         FaHVirtualDevice fahABB7001;
         FaHGroupMonitor fah0xf80x83;
         FaHGroupMonitor fah0x940x20; //Lamp plafond
@@ -68,14 +70,19 @@ namespace FaHConnector
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            kNXUart  = new KNXUartConnection(AppSettings.Default.ComPort)
+            /*
+            KNXUartConnection rkNXUart  = new KNXUartConnection(AppSettings.Default.ComPort)
             {
                 AllowWrite = true
             };
-            if (!kNXUart.ResetAndInit())
+            if (!rkNXUart.ResetAndInit())
             {
                 throw new Exception("Cannot init");
             }
+            kNXUart = rkNXUart;
+            */
+            TCPknxClient tCPknxClient = new TCPknxClient("172.16.16.20", 9998);
+            kNXUart = tCPknxClient;
 
             fahABB7001 = new FaHVirtualDevice(kNXUart, "ABB700C00001");
             fahABB7001.ConsolePrintMessages = true;
@@ -89,9 +96,11 @@ namespace FaHConnector
             fah0xE00x31.OnGroupValueChange += Group_OnGroupValueChange;
 
             fahABB7001.OnActorChange += Switch_OnActorChange;
-            //fahABB7002.OnActorChange += Switch_OnActorChange;
+            //fahABB7002.OnActorChange += Switch_OnActorChange;            
 
-            fahABB7001.StartFaHDevice();
+            fahABB7001.StartFaHDevice();            
+
+            
             //fahABB7002.StartFaHDevice();
         }
 
@@ -151,7 +160,7 @@ namespace FaHConnector
 
         private void button2_Click(object sender, EventArgs e)
         {
-            fahABB7001.ButtonClick(FreeAtHomeDevices.FaHDeviceProperties.SensorActorInterfaceType.ButtonLeft, 0);
+            fahABB7001.ButtonClick(FreeAtHomeDevices.FaHDeviceProperties.SensorActorInterfaceType.ButtonLeft, 0);            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -174,6 +183,23 @@ namespace FaHConnector
             {
                 fahABB7001.ShowBusInfo = false;
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var t1 = fahABB7001.GetChannelOnState(FreeAtHomeDevices.FaHDeviceProperties.SensorActorInterfaceType.Actor1);
+            if (t1)
+            {
+                fahABB7001.DeviceConfig.SetActorChannelValue(FreeAtHomeDevices.FaHDeviceProperties.SensorActorInterfaceType.Actor1, 0);
+            }
+            else
+            {
+                fahABB7001.DeviceConfig.SetActorChannelValue(FreeAtHomeDevices.FaHDeviceProperties.SensorActorInterfaceType.Actor1, 1);
+            }
+            /*
+            ActorAbb7001_1.Checked = t1;
+            var t2 = fahABB7001.GetChannelOnState(FreeAtHomeDevices.FaHDeviceProperties.SensorActorInterfaceType.Actor2);
+            ActorAbb7001_2.Checked = t2;*/
         }
     }
 }

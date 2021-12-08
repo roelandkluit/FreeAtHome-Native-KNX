@@ -49,10 +49,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using KNXBaseTypes;
+using KNXNetworkLayer;
 
 namespace KNXUartModule
 {
-    public class KNXUartConnection
+    public class KNXUartConnection : KNXNetworkLayerTemplate
     {
         private enum UartControlFieldValues : byte
         {
@@ -87,14 +88,14 @@ namespace KNXUartModule
             ResetTimeout
         }
 
-        public enum UartEvents
+        /*public enum UartEvents
         {
             GotKNXPacket = 0,
             GotAckPacket,
             GotNackPacket,
             DeviceOffline,
             DeviceOnline
-        }
+        }*/
 
         private enum readResult
         {
@@ -131,23 +132,16 @@ namespace KNXUartModule
                 if (_uartDeviceIsOnline == value) return;
                 _uartDeviceIsOnline = value;
                 if (value == false)
-                    OnUartEvent?.Invoke(this, UartEvents.DeviceOffline);
+                    this.OnParentKNXEvent(this, KNXNetworkLayerTemplate.KnxPacketEvents.DeviceOffline);
                 else
-                    OnUartEvent?.Invoke(this, UartEvents.DeviceOnline);
+                    this.OnParentKNXEvent(this, KNXNetworkLayerTemplate.KnxPacketEvents.DeviceOnline);
             }
         }
 
-        public List<KNXAddress> kNXAddressesToAck = new List<KNXAddress>();
-
-        public delegate void EventOnKNXMessage(KNXUartConnection caller, KNXmessage Message, UartEvents uartEvent);
-        public event EventOnKNXMessage OnKNXMessage;
+        private List<KNXAddress> kNXAddressesToAck = new List<KNXAddress>();
             
         public delegate void EventOnInvalidKNXMessage(KNXUartConnection caller, byte[] Message);
         public event EventOnInvalidKNXMessage OnInvalidKNXMessage;
-
-        public delegate void EventOnUartEvent(KNXUartConnection caller, UartEvents uartEvent);
-        public event EventOnUartEvent OnUartEvent;
-
 
         public string ComPort
         {
@@ -214,6 +208,22 @@ namespace KNXUartModule
             _port.Write(new byte[] { 0x02 }, 0, 1);
         }
 
+        public void Close()
+        {
+            tmr.Interval = 10000;
+            tmr.Enabled = false;
+            Thread.Sleep(100);
+            tmr.Enabled = false;
+            uartDeviceOnline = false;
+            dsState = DeviceState.Unkown;            
+            if (_port != null)
+            {
+                _port.Close();
+                _port.Dispose();
+                _port = null;
+            }            
+        }
+
         public bool ResetAndInit()
         {
             if(_port==null)
@@ -235,7 +245,6 @@ namespace KNXUartModule
                         _port.Write(new byte[] { 0x1F, 0x01 }, 0, 2);
                         _port.Write(new byte[] { 0x1E, 0x01 }, 0, 2);
                         _port.Write(new byte[] { 0x22, 0x01 }, 0, 2);*/
-
                         return false;
                     }
                     maxwait--;
@@ -269,7 +278,8 @@ namespace KNXUartModule
 
                         if (result == readResult.readSucces)
                         {
-                            OnKNXMessage?.Invoke(this, knx, UartEvents.GotKNXPacket);
+                            //OnKNXMessage?.Invoke(this, knx, KnxPacketEvents.GotKNXPacket);
+                            base.OnParentKNXMessage(this, knx, KnxPacketEvents.GotKNXPacket);
                             dsState = DeviceState.StatusOK;
                             uartDeviceOnline = true;
                         }
@@ -337,26 +347,23 @@ namespace KNXUartModule
             }
         }
 
-        public static byte CalculateChecksum(List<byte> frame)
+        public override void AddKNXAddressToAck(KNXAddress addr)
         {
-            byte cs = 0xFF;
-            for (int it = 0; it != frame.Count; it++)
+            this.kNXAddressesToAck.Add(addr);
+        }
+
+        public override void RemoveKNXAddressToAck(KNXAddress addr)
+        {
+            if (kNXAddressesToAck.Contains(addr))
             {
-                cs ^= frame[it];
+                kNXAddressesToAck.Remove(addr);
             }
-            return cs;
         }
 
-        static private bool CheckChecksum(List<byte> frame, int checksum)
-        {
-            int cs = CalculateChecksum(frame);
-            cs ^= checksum;
-            return (cs == 0 ? true : false);
-        }
-
-        public void SendKNXMessage(KNXmessage knxMsg)
+        public override bool SendKNXMessage(KNXmessage knxMsg)
         {
             knxQueue.Enqueue(knxMsg);
+            return true;
         }        
 
         public bool WriteDirect(KNXmessage knxMsg, bool waitForAck)
@@ -385,7 +392,7 @@ namespace KNXUartModule
             }
         }
 
-        public void SendAck()
+        public override void SendAck()
         {
             if (AllowWrite)
             {

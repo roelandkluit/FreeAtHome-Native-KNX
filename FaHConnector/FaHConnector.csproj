@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>FaHConnector</RootNamespace>
     <AssemblyName>FaHConnector</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -16,6 +16,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -77,6 +78,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="AppSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -108,9 +110,17 @@
       <Project>{17504416-f04b-49df-8e9e-ece5bba7f3d3}</Project>
       <Name>FaHPayloadInterpeters</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FaHTCPClient\FaHTCPClient.csproj">
+      <Project>{6bb00373-d1a6-424e-b787-e028cd093313}</Project>
+      <Name>FaHTCPClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KNXBaseTypes\KNXBaseTypes.csproj">
       <Project>{7187f068-d7dd-4116-9c45-20a915b762a2}</Project>
       <Name>KNXBaseTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KNXNetworkLayerTemplate\KNXNetworkLayerTemplate.csproj">
+      <Project>{52b9a3b2-972e-433f-a78c-1963f77fb815}</Project>
+      <Name>KNXNetworkLayerTemplate</Name>
     </ProjectReference>
     <ProjectReference Include="..\KNXUartModule\KNXUartModule.csproj">
       <Project>{77E38B60-3F37-4B21-9034-AD1E331D4AE9}</Project>

@@ -1,5 +1,6 @@
 ﻿using FAHPayloadInterpeters;
 using KNXBaseTypes;
+using KNXNetworkLayer;
 using KNXUartModule;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace VirtualFahDevice
 {
     public class FaHGroupMonitor
     {
-        private KNXUartConnection kNXUart;
+        private KNXNetworkLayerTemplate kNXUart;
         public KNXAddress knxGroupToMonitor { private set; get; }
         private byte[] data = null;
 
@@ -49,23 +50,35 @@ namespace VirtualFahDevice
         public delegate void EventOnGroupValueChange(FaHGroupMonitor caller, byte[] data);
         public event EventOnGroupValueChange OnGroupValueChange;
        
-
-
-        public FaHGroupMonitor(KNXUartConnection kNXUart, KNXAddress GroupToMonitor)
+        public FaHGroupMonitor(KNXNetworkLayerTemplate kNXUart, KNXAddress GroupToMonitor)
         {
             knxGroupToMonitor = GroupToMonitor;
 
             this.kNXUart = kNXUart;
             this.kNXUart.OnKNXMessage += KNXUart_OnKNXMessage;
+            this.kNXUart.OnKNXEvent += KNXUart_OnKNXEvent;
 
+            GetCurrentGroupValueStatus();
+        }
+
+        private void GetCurrentGroupValueStatus()
+        {
             //Request current status
             FreeAtHomeDevices.FaHDevice d = new FreeAtHomeDevices.FaHDevice();
             d.KnxAddress.knxAddress = 0;
-            KNXmessage a = FAHGroupValueRead.CreateFAHGroupValueRead(d, GroupToMonitor, new byte[] { });
+            KNXmessage a = FAHGroupValueRead.CreateFAHGroupValueRead(d, knxGroupToMonitor, new byte[] { });
             kNXUart.SendKNXMessage(a);
         }
 
-        private void KNXUart_OnKNXMessage(KNXUartConnection caller, KNXBaseTypes.KNXmessage Message, KNXUartConnection.UartEvents uartEvent)
+        private void KNXUart_OnKNXEvent(KNXNetworkLayerTemplate caller, KNXNetworkLayerTemplate.KnxPacketEvents uartEvent)
+        {
+            if(uartEvent == KNXNetworkLayerTemplate.KnxPacketEvents.DeviceOnline)
+            {
+                GetCurrentGroupValueStatus();
+            }
+        }
+
+        private void KNXUart_OnKNXMessage(KNXNetworkLayerTemplate caller, KNXBaseTypes.KNXmessage Message, KNXNetworkLayerTemplate.KnxPacketEvents uartEvent)
         {
             if (Message.ControlField.RepeatFrame)
                 return;

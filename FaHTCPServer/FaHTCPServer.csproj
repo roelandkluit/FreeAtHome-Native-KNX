@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FAED0DE1-833B-4C8B-932F-0B6A1A7945A1}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>FreeAtHomeDeviceLearner</RootNamespace>
-    <AssemblyName>FreeAtHomeDeviceLearner</AssemblyName>
+    <ProjectGuid>{E87E7550-83CE-407D-B863-1F45123BE55E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FaHTCPServer</RootNamespace>
+    <AssemblyName>FaHTCPServer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -37,6 +37,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,30 +51,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeviceLearner.cs" />
-    <Compile Include="Properties\AppSettings.Designer.cs">
+    <Compile Include="AppSettings.Designer.cs">
+      <DependentUpon>AppSettings.settings</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>AppSettings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TCPknxServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Properties\AppSettings.settings">
+    <None Include="AppSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>AppSettings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FAHPayloadInterpeters\FaHPayloadInterpeters.csproj">
-      <Project>{17504416-f04b-49df-8e9e-ece5bba7f3d3}</Project>
-      <Name>FaHPayloadInterpeters</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FaHDeviceObject\FaHDeviceObject.csproj">
-      <Project>{e44513a1-1e55-41b0-90e4-ae26c75bdb45}</Project>
-      <Name>FaHDeviceObject</Name>
-    </ProjectReference>
     <ProjectReference Include="..\KNXBaseTypes\KNXBaseTypes.csproj">
       <Project>{7187f068-d7dd-4116-9c45-20a915b762a2}</Project>
       <Name>KNXBaseTypes</Name>

@@ -42,6 +42,7 @@ using FAHPayloadInterpeters;
 using FAHPayloadInterpeters.FAHFunctionPropertyStateResponses;
 using FreeAtHomeDevices;
 using KNXBaseTypes;
+using KNXNetworkLayer;
 using KNXUartModule;
 using System;
 using System.Collections.Generic;
@@ -57,7 +58,7 @@ namespace VirtualFahDevice
     public class FaHVirtualDevice
     {
         private FreeAtHomeDevices.FaHDevice thisDevice = new FreeAtHomeDevices.FaHDevice();
-        private KNXUartConnection kNXUart;
+        private KNXNetworkLayerTemplate kNXUart;
         public bool ConsolePrintMessages = false;
         public bool ShowBusInfo = false;
         private string FahDeviceAddressName = "";
@@ -83,7 +84,17 @@ namespace VirtualFahDevice
             thisDevice.ButtonClick(Button, Value);
         }
 
-        public FaHVirtualDevice(KNXUartConnection kNXUart, string FaHDeviceAddress)
+        public void SetActorChannelValue(FaHDeviceProperties.SensorActorInterfaceType actorInterfaceType, byte data)
+        {
+            DeviceConfig.SetActorChannelValue(actorInterfaceType, data);
+        }
+
+        public bool GetChannelOnState(FaHDeviceProperties.SensorActorInterfaceType actorInterfaceType)
+        {
+            return DeviceConfig.GetChannelOnState(actorInterfaceType);
+        }
+
+        public FaHVirtualDevice(KNXNetworkLayerTemplate kNXUart, string FaHDeviceAddress)
         {
             FahDeviceAddressName = FaHDeviceAddress;
             byte[] devAddr = KNXHelpers.HexStringToByteArray(FahDeviceAddressName);
@@ -94,6 +105,15 @@ namespace VirtualFahDevice
 
             this.kNXUart = kNXUart;
             this.kNXUart.OnKNXMessage += KNXUart_OnKNXMessage;
+            this.kNXUart.OnKNXEvent += KNXUart_OnKNXEvent;
+        }
+
+        private void KNXUart_OnKNXEvent(KNXNetworkLayerTemplate caller, KNXNetworkLayerTemplate.KnxPacketEvents uartEvent)
+        {
+            if(uartEvent == KNXNetworkLayerTemplate.KnxPacketEvents.DeviceOnline)
+            {
+                kNXUart.SendKNXMessage(FAHDeviceDescriptorResponse.CreateResponse(thisDevice, new KNXAddress(0)));
+            }
         }
 
         public void UpdateStatistics()
@@ -114,7 +134,7 @@ namespace VirtualFahDevice
                 else
                 {
                     TimeSpan t = DateTime.Now - BootTime;
-                    uint timelen = (uint)t.TotalMinutes;
+                    uint timelen = (uint)t.TotalHours;
                     this.DeviceConfig.DeviceHealthStatus.Uptime += timelen;
                     BootTime = DateTime.Now;
                     this.DeviceConfig.Serialize(this.DeviceConfig.AutosaveFilename);
@@ -140,7 +160,7 @@ namespace VirtualFahDevice
             }            
 
             //Ensure KNX Ack's are send
-            this.kNXUart.kNXAddressesToAck.Add(thisDevice.KnxAddress);
+            this.kNXUart.AddKNXAddressToAck(thisDevice.KnxAddress);
 
             //Update list, its cached.
             KNXAddress[] k = thisDevice.GroupValueAdresses;
@@ -201,7 +221,7 @@ namespace VirtualFahDevice
 
         }
 
-        private void KNXUart_OnKNXMessage(KNXUartConnection caller, KNXBaseTypes.KNXmessage Message, KNXUartConnection.UartEvents uartEvent)
+        private void KNXUart_OnKNXMessage(KNXNetworkLayerTemplate caller, KNXBaseTypes.KNXmessage Message, KNXNetworkLayerTemplate.KnxPacketEvents uartEvent)
         {
             if (Message.ControlField.RepeatFrame)
                 return;
@@ -257,9 +277,9 @@ namespace VirtualFahDevice
                             if (FaHIndAddrSerialNumberWrite.FaHDeviceAddress == thisDevice.FaHAddress)
                             {
                                 bool moreIndices;
-                                FaHIndAddrSerialNumberWrite.SaveToDevice(ref thisDevice, out moreIndices);
-                                caller.kNXAddressesToAck.Clear();
-                                caller.kNXAddressesToAck.Add(thisDevice.KnxAddress);
+                                caller.RemoveKNXAddressToAck(thisDevice.KnxAddress);
+                                FaHIndAddrSerialNumberWrite.SaveToDevice(ref thisDevice, out moreIndices);                                
+                                caller.AddKNXAddressToAck(thisDevice.KnxAddress);
                                 //Only Ack, no response
 
                                 if (ConsolePrintMessages)

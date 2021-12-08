@@ -153,6 +153,11 @@ namespace FreeAtHomeDevices
                     //check if it is GroupValueWrite we have to act upon
                     if (GetGroupValueEntry(GroupValue, ref ChannelID, ref PropertyID, ChannelType.chanInputActorGroupMessage))
                     {
+                        if (Channels[ChannelID].Properties[PropertyID].PropertyData[1].data.Length == 2)
+                        {
+                            Channels[ChannelID].Properties[PropertyID].PropertyData[1].data[1] = data[0];
+                            this.AutoSave();
+                        }
                         var OutChan = Channels[ChannelID].Properties[PropertyID + 1];
                         if (OutChan != null)
                         {
@@ -240,6 +245,59 @@ namespace FreeAtHomeDevices
         {
             Channels[ChannelIndex].Properties[Property].channelType = channelType;
             Channels[ChannelIndex].Properties[Property].ActorSensorIndex = ActorSensorIndex;
+        }
+
+        public void SetActorChannelValue(SensorActorInterfaceType actorInterfaceType, byte data)
+        {
+            byte[] datan = new byte[2] { 1, data };
+            int ChanIndex = 0;
+            int PropIndex = 0;
+            var ts = ChannelProperties(actorInterfaceType, ref ChanIndex, ref PropIndex);
+            WritePropertyValue(ChanIndex, PropIndex, 1, datan);
+        }
+
+        public bool GetChannelOnState(SensorActorInterfaceType actorInterfaceType)
+        {
+            int r1 = 0;
+            int r2 = 0;
+            try
+            {
+                var ts = ChannelProperties(actorInterfaceType, ref r1, ref r2);
+                if (ts != null)
+                {
+                    return 0 != ts.PropertyData[1].data[1];
+                }
+            }
+            catch
+            {                
+            }
+            return false;
+        }
+
+        private FaHDeviceProperties ChannelProperties(SensorActorInterfaceType ActorSensorIndex, ref int ChanIndex, ref int ChanProp)
+        {
+            foreach (var chan in Channels)
+            {
+                if(chan != null)
+                {
+                    foreach(var prop in chan.Properties)
+                    {
+                        if(prop!=null)
+                        {
+                            if (prop.channelType == ChannelType.chanInputActorGroupMessage)
+                            {
+                                if (prop.ActorSensorIndex == ActorSensorIndex)
+                                {
+                                    ChanIndex = chan.ChannelIndex;
+                                    ChanProp = prop.PropertyIndex;
+                                    return prop;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
         }
 
         public FaHDeviceProperties.ChannelType GetChannelPropertyType(int ChannelIndex, int Property, out SensorActorInterfaceType ActorSensorIndex)
@@ -339,7 +397,7 @@ namespace FreeAtHomeDevices
             EnsurePropertyFieldExist(ChannelIndex, propIndex, FieldID);
             Channels[ChannelIndex].Properties[propIndex].PropertyData[FieldID].data = propertyData;
 
-            //Check if value is set via Application\Web
+            //Check if device (on\off\dim) value is set via Application\Web
             if(FieldID == 1 && Channels[ChannelIndex].Properties[propIndex].channelType == ChannelType.chanInputActorGroupMessage)
             {
                 var OutChan = Channels[ChannelIndex].Properties[propIndex + 1];
@@ -356,6 +414,7 @@ namespace FreeAtHomeDevices
                             //Console.WriteLine("SendGroupValueWritePropVal:" + OutChan.ChannelAdresses[1].GroupValueAddress.ElementAt(0).GetAsReversed().ToString());
                             OnGroupWriteEvent?.Invoke(this, OutChan.ChannelAdresses[1].GroupValueAddress.ElementAt(0).GetAsReversed(), new byte[] { propertyData[1] });
                             OnActorChange?.Invoke(this, OutChan.ActorSensorIndex, propertyData[1]);
+                            this.AutoSave();
                         }
                     }
                 }
@@ -751,6 +810,7 @@ namespace FreeAtHomeDevices
         public void Serialize(string fileName)
         {
             UpdateCounters();
+
             using (StreamWriter wr = new StreamWriter(fileName, false))
             {
                 this.LastWriteTime = DateTime.UtcNow;

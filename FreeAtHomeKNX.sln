@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeAtHomeMonitor", "FreeAtHomeMonitor\FreeAtHomeMonitor.csproj", "{DEBD7371-A0CB-471A-8541-0A6047C3E8BE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6BB00373-D1A6-424E-B787-E028CD093313} = {6BB00373-D1A6-424E-B787-E028CD093313}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KNXUartModule", "KNXUartModule\KNXUartModule.csproj", "{77E38B60-3F37-4B21-9034-AD1E331D4AE9}"
 EndProject
@@ -31,6 +34,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaHConnector", "FaHConnector\FaHConnector.csproj", "{FCA399C3-7984-463D-A3F6-82D5CA952924}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaHTCPClient", "FaHTCPClient\FaHTCPClient.csproj", "{6BB00373-D1A6-424E-B787-E028CD093313}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KNXNetworkLayerTemplate", "KNXNetworkLayerTemplate\KNXNetworkLayerTemplate.csproj", "{52B9A3B2-972E-433F-A78C-1963F77FB815}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaHKNXTCPServer", "FaHKNXTCPServer\FaHKNXTCPServer.csproj", "{58F17F41-69F9-4B39-9034-1FF2D78340FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaHTCPServer", "FaHTCPServer\FaHTCPServer.csproj", "{E87E7550-83CE-407D-B863-1F45123BE55E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,41 +81,27 @@ Global
 		{FCA399C3-7984-463D-A3F6-82D5CA952924}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCA399C3-7984-463D-A3F6-82D5CA952924}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCA399C3-7984-463D-A3F6-82D5CA952924}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BB00373-D1A6-424E-B787-E028CD093313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BB00373-D1A6-424E-B787-E028CD093313}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BB00373-D1A6-424E-B787-E028CD093313}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BB00373-D1A6-424E-B787-E028CD093313}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52B9A3B2-972E-433F-A78C-1963F77FB815}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52B9A3B2-972E-433F-A78C-1963F77FB815}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52B9A3B2-972E-433F-A78C-1963F77FB815}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52B9A3B2-972E-433F-A78C-1963F77FB815}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58F17F41-69F9-4B39-9034-1FF2D78340FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58F17F41-69F9-4B39-9034-1FF2D78340FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58F17F41-69F9-4B39-9034-1FF2D78340FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58F17F41-69F9-4B39-9034-1FF2D78340FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E87E7550-83CE-407D-B863-1F45123BE55E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E87E7550-83CE-407D-B863-1F45123BE55E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E87E7550-83CE-407D-B863-1F45123BE55E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E87E7550-83CE-407D-B863-1F45123BE55E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D39B1252-5A0F-4B11-8268-85EAC1B872F3}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 9
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://dummy:8080/tfs/dummy
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = FreeAtHomeMonitor\\FreeAtHomeMonitor.csproj
-		SccProjectName1 = FreeAtHomeMonitor
-		SccLocalPath1 = FreeAtHomeMonitor
-		SccProjectUniqueName2 = KNXUartModule\\KNXUartModule.csproj
-		SccProjectName2 = KNXUartModule
-		SccLocalPath2 = KNXUartModule
-		SccProjectUniqueName3 = KNXBaseTypes\\KNXBaseTypes.csproj
-		SccProjectName3 = KNXBaseTypes
-		SccLocalPath3 = KNXBaseTypes
-		SccProjectUniqueName4 = FAHPayloadInterpeters\\FaHPayloadInterpeters.csproj
-		SccProjectName4 = FAHPayloadInterpeters
-		SccLocalPath4 = FAHPayloadInterpeters
-		SccProjectUniqueName5 = FaHDeviceObject\\FaHDeviceObject.csproj
-		SccProjectName5 = FaHDeviceObject
-		SccLocalPath5 = FaHDeviceObject
-		SccProjectUniqueName6 = FaHDeviceLearner\\FaHDeviceLearner.csproj
-		SccProjectName6 = FaHDeviceLearner
-		SccLocalPath6 = FaHDeviceLearner
-		SccProjectUniqueName7 = FaHDeviceEmulator\\FaHDeviceEmulator.csproj
-		SccProjectName7 = FaHDeviceEmulator
-		SccLocalPath7 = FaHDeviceEmulator
-		SccProjectUniqueName8 = FaHConnector\\FaHConnector.csproj
-		SccProjectName8 = FaHConnector
-		SccLocalPath8 = FaHConnector
 	EndGlobalSection
 EndGlobal

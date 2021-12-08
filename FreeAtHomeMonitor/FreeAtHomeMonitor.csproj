@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>FreeAtHomeKNX</RootNamespace>
     <AssemblyName>FreeAtHomeKNX</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -16,6 +16,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -72,9 +73,17 @@
       <Project>{e44513a1-1e55-41b0-90e4-ae26c75bdb45}</Project>
       <Name>FaHDeviceObject</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FaHTCPClient\FaHTCPClient.csproj">
+      <Project>{6bb00373-d1a6-424e-b787-e028cd093313}</Project>
+      <Name>FaHTCPClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KNXBaseTypes\KNXBaseTypes.csproj">
       <Project>{7187f068-d7dd-4116-9c45-20a915b762a2}</Project>
       <Name>KNXBaseTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KNXNetworkLayerTemplate\KNXNetworkLayerTemplate.csproj">
+      <Project>{52b9a3b2-972e-433f-a78c-1963f77fb815}</Project>
+      <Name>KNXNetworkLayerTemplate</Name>
     </ProjectReference>
     <ProjectReference Include="..\KNXUartModule\KNXUartModule.csproj">
       <Project>{77e38b60-3f37-4b21-9034-ad1e331d4ae9}</Project>

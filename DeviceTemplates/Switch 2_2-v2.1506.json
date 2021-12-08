@@ -2196,6 +2196,7 @@
           "ActorSensorIndex": 0
         }
       ],
+      "DeviceChannelInfo": "014F004F0000FFFF00000000EE",
       "Description": ""
     },
     {
@@ -2510,6 +2511,7 @@
           "ActorSensorIndex": 0
         }
       ],
+      "DeviceChannelInfo": "014F00500000FFFF00000000EE",
       "Description": ""
     }
   ],
@@ -2520,7 +2522,7 @@
   "SystemID": {
     "SystemID": 65535
   },
-  "LastWriteTime": "2020-12-05T20:15:29.1756118Z",
+  "LastWriteTime": "2021-12-07T16:27:46.7931136Z",
   "FahClassVersion": 2.0,
   "ChannelCount": 6
 }

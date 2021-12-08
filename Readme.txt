@@ -4,7 +4,7 @@ provides interaction over KNX to Free@Home bus devices.
 This software is not created, maintained or has any assosiation
 with ABB \ Busch-Jeager.
 
-Copyright (C) 2020 Roeland Kluit - v0.1 Dec2020
+Copyright (C) 2020-2021 Roeland Kluit - v0.2 Dec2021
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -48,9 +48,14 @@ FaHDeviceLearner		-	Searches for other device (first to respond to discovery) on
 FahDeviceEmulator		-	Emulates a F@H device
 								Use as input previously learned devices.
 								Configuration using F@H SysAp
-						-	FaHGroupMonitor
+				-	FaHGroupMonitor
 								Used to monitor value changes for specific GroupValues, group values to be monitored have to be specified manually.
 FaHConnector			-	Test Application to test and interact with the F@H bus.
+FaHTCPServer			-	Connection between KNX-FaH and a TCP, multi client server.
+FaHTCPClient			-	KNX-FaH TCP client, removes the need for a KNX-TCP uart at multiple locations, but use ethernet instead.
+
+* The code has been refactored to use TCP clients, with a single KNX to TCP endpoint.
+* Updated to support Free@home SysAp accesspoint firmware version 3.0
 
 * The Switch 2_2-v2.1506.json file contains a 2\2 Sensor Actor device that can be used in the emulator.
 * I used the learner only on a dedicated bus (1 device, 1 powersupply and the tinyserial) not sure what the SysAp thinks of it when you are using it on a fully equiped bus
